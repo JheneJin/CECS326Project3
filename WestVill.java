@@ -25,8 +25,6 @@ public class westVill implements Runnable
          Thread.sleep(randSecs());
          System.out.println("West Villager " + pplNum + " is driving on the road");
          System.out.println("West Villager " + pplNum + op[randOp.nextInt(op.length)]);
-
-
       }
       catch(InterruptedException e){
          System.out.println("Error happened.");
