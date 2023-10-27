@@ -28,17 +28,19 @@ public class westVill implements Runnable
         Thread.sleep(randSecs());
         semaphore.acquire();
 
-        while (RoadController.villFlag()) {
+        while (roadController.villFlag()) {
             semaphore.release();
             Thread.sleep(randSecs()); 
             semaphore.acquire();
         }
 
         System.out.println("West Villager " + pplNum + " is driving on the road");
+        Thread.sleep(randSecs()); 
         System.out.println("West Villager " + pplNum + op[randOp.nextInt(op.length)]);
         Thread.sleep(randSecs());
         System.out.println("West Villager " + pplNum + " has finished the exchange");
-        RoadController.switchTurn();
+        Thread.sleep(10);
+        roadController.switchTurn();
         semaphore.release();
     } catch (InterruptedException e) {
         System.out.println("Error happened.");
@@ -49,4 +51,3 @@ public class westVill implements Runnable
       drive();
    }
 }
-
