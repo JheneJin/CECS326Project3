@@ -32,7 +32,7 @@ public class eastVill implements Runnable
         semaphore.acquire();
         
         //while the villFlag is not true
-        while (!RoadController.villFlag()) {
+        while (!roadController.villFlag()) {
             //if its not the right villagers turn, it will rellease the semaphore
             semaphore.release();
             //makes it sleep, so another villager who has the permission to acquire
@@ -42,12 +42,14 @@ public class eastVill implements Runnable
 
         //displays the east villlager driving and completing the task
         System.out.println("East Villager " + pplNum + " is driving on the road");
+        //tells thread or villager to go sleep to simulate the road and task being done in real time
+        Thread.sleep(randSecs()); 
         System.out.println("East Villager " + pplNum + op[randOp.nextInt(op.length)]);
-        //tells thread or villager to go sleep
         Thread.sleep(randSecs());
         System.out.println("East Villager " + pplNum + " has finished the exchange");
+        Thread.sleep(10);
         //changes the boolean here so the counterpart villager can use the semaphore
-        RoadController.switchTurn();
+        roadController.switchTurn();
         //releases the current village semaphore right afgter
         semaphore.release();
         
@@ -60,4 +62,3 @@ public class eastVill implements Runnable
       drive();
    }
 }
-
