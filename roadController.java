@@ -1,4 +1,5 @@
 import java.util.concurrent.Semaphore;
+import java.util.Random;
 
 /**
  * RoadController.java
@@ -6,10 +7,10 @@ import java.util.concurrent.Semaphore;
  *
  */
  
-public class RoadController{  
+public class roadController{  
     private static  int carLimit = 1;
     private static Semaphore semaphore = new Semaphore(carLimit);
-    private static boolean villTurn = true;
+    private static boolean villTurn = new Random().nextBoolean();
    public static void main(String args[]){
       eastVill [] eastPpl = new eastVill[6];
       westVill [] westPpl = new westVill[6];
