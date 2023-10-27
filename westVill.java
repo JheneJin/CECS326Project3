@@ -27,7 +27,7 @@ public class westVill implements Runnable
     try {
         Thread.sleep(randSecs());
         semaphore.acquire();
-
+        //runs only when the boolean value is true
         while (roadController.villFlag()) {
             semaphore.release();
             Thread.sleep(randSecs()); 
