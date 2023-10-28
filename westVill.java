@@ -53,7 +53,8 @@ public class westVill implements Runnable
         System.out.println("West Villager " + pplNum + " has finished the exchange");
         Thread.sleep(10);
         //changes the boolean here so the counterpart villager can use the semaphore
-        RoadController.switchTurn();
+        boolean randSwitch = new Random().nextBoolean();
+        if (randSwitch) RoadController.switchTurn();
         //releases the current village semaphore right afgter
         semaphore.release();
 
@@ -64,6 +65,8 @@ public class westVill implements Runnable
 
    //runs the drive function
    public void run(){
-      drive();
+        while(true) {
+            drive();
+        }
    }
 }
