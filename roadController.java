@@ -7,7 +7,7 @@ import java.util.Random;
  *
  */
  
-public class RoadController {
+public class roadController {
     //determines how many cars can use the road at a time
     private static  int carLimit = 1;
     //creates semaphore
@@ -18,10 +18,10 @@ public class RoadController {
 
     public static void main(String args[]){
         //creates array for each village 
-        eastVill [] eastPpl = new eastVill[6];
-        westVill [] westPpl = new westVill[6];
+        eastVill [] eastPpl = new eastVill[3];
+        westVill [] westPpl = new westVill[3];
         //each village array is filled
-        for (int i = 1; i < 6; i++){
+        for (int i = 1; i <= 3; i++){
             eastPpl[i] = new eastVill(i, semaphore);
             westPpl[i] = new westVill(i, semaphore);
         }
