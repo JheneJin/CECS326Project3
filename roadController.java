@@ -21,9 +21,9 @@ public class roadController {
         eastVill [] eastPpl = new eastVill[3];
         westVill [] westPpl = new westVill[3];
         //each village array is filled
-        for (int i = 1; i < 4; i++){
-            eastPpl[i] = new eastVill(i, semaphore);
-            westPpl[i] = new westVill(i, semaphore);
+        for (int i = 0; i <= 2; i++){
+            eastPpl[i-1] = new eastVill(i, semaphore);
+            westPpl[i-1] = new westVill(i, semaphore);
         }
    }
 
