@@ -35,7 +35,7 @@ public class eastVill implements Runnable
         semaphore.acquire();
 
         //runs only when the boolean is false
-        while (!RoadController.villFlag()) {
+        while (!roadController.villFlag()) {
             //if its not the right villagers turn, it will rellease the semaphore
             semaphore.release();
             //makes it sleep, so another villager who has the permission to acquire
@@ -54,7 +54,7 @@ public class eastVill implements Runnable
         Thread.sleep(10);
         //changes the boolean here so the counterpart villager can use the semaphore
         boolean randSwitch = new Random().nextBoolean();
-        if (randSwitch) RoadController.switchTurn();
+        if (randSwitch) roadController.switchTurn();
         //releases the current village semaphore right afgter
         semaphore.release();
         
