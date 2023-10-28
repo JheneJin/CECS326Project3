@@ -31,7 +31,7 @@ public class eastVill implements Runnable
         // the villager acqiiores tjhe semaphore
         semaphore.acquire();
         
-        //while the villFlag is not true
+        //runs only when the boolean is false
         while (!roadController.villFlag()) {
             //if its not the right villagers turn, it will rellease the semaphore
             semaphore.release();
