@@ -7,7 +7,7 @@ import java.util.Random;
  *
  */
  
-public class RoadController {
+public class roadController {
     //determines how many cars can use the road at a time
     private static  int carLimit = 1;
     //creates semaphore
