@@ -3,18 +3,21 @@ import java.util.concurrent.Semaphore;
 
 public class eastVill implements Runnable
 {
+   //initialize the pplNum, semaphore, thread, and array of task for villagers, and random variable
    int pplNum;
    public Semaphore semaphore;
    public Thread thread;
    String [] op = {" drinking water ", " talking to the boys ", " working out ", " asking for directions", " looking for baddies"};
    Random randOp = new Random();
 
+   //creates random amount of secs for sleep
    public static int randSecs(){
       Random r = new Random();
       int rand = r.nextInt(3000);
       return rand;
    }
-  
+
+   //constructor for eastVill starts the thread
    public eastVill(int pplIndex, Semaphore semaphore){
       pplNum = pplIndex;
       this.semaphore = semaphore;
@@ -57,7 +60,7 @@ public class eastVill implements Runnable
         System.out.println("Error happened.");
     }
 }
-
+   //runs the drive function
    public void run(){
       drive();
    }
